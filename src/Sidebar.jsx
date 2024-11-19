@@ -13,7 +13,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
         setShowCompose(true);
     };
 
-    const handleClose = () => {
+    const handleCloseCompose = () => {
         setShowCompose(false);
     };
 
@@ -46,16 +46,16 @@ function Sidebar({ isOpen, toggleSidebar }) {
                     className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-lg hover:shadow-xl transition duration-300 ease-in-out flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
                     type="button"
                     onClick={handleCompose}
-                
-                    
                 >
                     <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M4 4h16v16H4z"></path>
                         <path d="M4 10h16M8 4v8"></path>
                     </svg>
                     <span>Compose</span>
-                    {showCompose}
                 </button>
+
+                {/* Render the ComposeEmail modal conditionally */}
+                {showCompose && <ComposeEmail onClose={handleCloseCompose} />}
 
                 <h2 className="mt-4 text-lg font-semibold">Menu</h2>
                 <ul className="mt-4 space-y-2">
@@ -97,4 +97,3 @@ function Sidebar({ isOpen, toggleSidebar }) {
 }
 
 export default Sidebar;
-

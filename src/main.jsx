@@ -9,7 +9,6 @@ import Footer from './Footer.jsx';
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
   <App />
-  <Footer/>
 </Provider>,
 )
 

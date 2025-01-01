@@ -1,43 +1,41 @@
+// src/app/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import starredReducer from '../slices/Starredslice';
-import sidebarReducer from '../slices/sidebarSlice';
-// Load the starred state from local storage
+import draftsReducer from '../slices/draftsSlice';
+import starredReducer from '../slices/starredSlice';
+
+// Function to load state from local storage
 const loadFromLocalStorage = () => {
-    try {
-        const serializedState = localStorage.getItem('starred');
-        if (serializedState === null) return {};
-        return JSON.parse(serializedState);
-    } catch (e) {
-        console.warn("Failed to load state", e);
-        return undefined;
-    }
+  try {
+    const serializedState = localStorage.getItem('emailDrafts');
+    if (serializedState === null) return undefined;
+    return { drafts: JSON.parse(serializedState) };
+  } catch (e) {
+    console.warn("Could not load drafts from local storage:", e);
+    return undefined;
+  }
 };
 
-// Save the starred state to local storage
+// Function to save state to local storage
 const saveToLocalStorage = (state) => {
-    try {
-        const serializedState = JSON.stringify(state);
-        localStorage.setItem('starred', serializedState);
-    } catch (e) {
-        console.warn("Failed to save state", e);
-    }
-};
-
-const preloadedState = {
-    starred: loadFromLocalStorage(),
+  try {
+    const serializedState = JSON.stringify(state.drafts);
+    localStorage.setItem('emailDrafts', serializedState);
+  } catch (e) {
+    console.warn("Could not save drafts to local storage:", e);
+  }
 };
 
 const store = configureStore({
-    reducer: {
-        starred: starredReducer,
-        sidebar: sidebarReducer,
-    },
-    preloadedState,
+  reducer: {
+    drafts: draftsReducer,
+    starred: starredReducer,
+    // Add other reducers here
+  },
+  preloadedState: loadFromLocalStorage(),
 });
 
-// Subscribe to store changes to save updates to local storage
 store.subscribe(() => {
-    saveToLocalStorage(store.getState().starred);
+  saveToLocalStorage(store.getState());
 });
 
 export default store;

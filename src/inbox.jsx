@@ -1,11 +1,10 @@
-// import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import { toggleStarred } from '../slices/Starredslice';
 import emailData from './email.json';
 import { useState } from 'react';
 import Sidebar from './Sidebar';
-
+import Navbar from './Navbar';
 const Inbox = () => {
     const dispatch = useDispatch();
     const starredEmails = useSelector((state) => state.starred);
@@ -29,44 +28,7 @@ const Inbox = () => {
 
     return (
         <div className="p-4">
-            <div className="bg-white p-4 shadow-sm flex justify-between items-center">
-                <div className="relative group inline-block">
-                    <div
-                        className="p-2 rounded-full group-hover:bg-gray-400 transition duration-200 cursor-pointer"
-                        onClick={toggleSidebar}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-700"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </div>
-                    <span className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                        Menu
-                    </span>
-                </div>
-
-                <input
-                    type="text"
-                    placeholder="Search mail"
-                    className="border p-2 rounded-md w-1/3"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-
-                <div className="flex items-center space-x-4">
-                    <button className="p-2 rounded-full hover:bg-gray-200">🔔</button>
-                    <img
-                        src=""
-                        alt="User"
-                        className="rounded-full w-10 h-10"
-                    />
-                </div>
-            </div>
+           <Navbar toggleSidebar= {toggleSidebar}  searchTerm = {searchTerm} setSearchTerm= {setSearchTerm} />
 
             {/* Sidebar Component */}
             <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}  />

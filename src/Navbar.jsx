@@ -1,7 +1,10 @@
-import  { useRef, useEffect, useState } from "react";
+// src/components/Navbar.jsx
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 
-const Navbar = ({ toggleSidebar, searchTerm, setSearchTerm }) => {
+const NavbarHeight = 64; // Height in pixels (h-16 in Tailwind)
+
+const Navbar = ({ toggleSidebar, searchTerm, setSearchTerm, isSidebarHovered }) => {
   const navRef = useRef(null);
   const menuIconRef = useRef(null);
   const notificationRef = useRef(null);
@@ -62,12 +65,17 @@ const Navbar = ({ toggleSidebar, searchTerm, setSearchTerm }) => {
   return (
     <div
       ref={navRef}
-      className="bg-white p-4 shadow-lg flex justify-between items-center border-b"
+      className="fixed top-0 left-0 right-0 p-4 shadow-lg flex justify-between items-center border-b bg-slate-950 z-50"
+      style={{
+        left: isSidebarHovered ? '16rem' : '4rem', // Align with Sidebar width
+        width: `calc(100% - ${isSidebarHovered ? '16rem' : '4rem'})`, // Adjust width accordingly
+        transition: 'left 0.3s ease, width 0.3s ease',
+      }}
     >
       {/* Menu Icon */}
       <div
         className="relative group inline-block"
-        // onMouseEnter={() => setHoverMenu(true)}
+        onMouseEnter={() => setHoverMenu(true)}
         onMouseLeave={() => setHoverMenu(false)}
       >
         <div

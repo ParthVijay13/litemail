@@ -476,7 +476,7 @@ const ComposeEmail = ({ onClose, saveDraft, draft }) => {
 
   return (
     <Draggable handle=".handle">
-      <div className="fixed top-0 right-0 left-1/2 transform -translate-x-1/2 bg-white shadow-lg w-[90vw] max-w-lg h-auto rounded-lg p-6 overflow-y-auto font-sans">
+      <div className="fixed bottom-0 right-0 left-1/2 transform -translate-x-1/2 bg-white shadow-lg w-[90vw] max-w-lg h-auto rounded-lg p-6 overflow-y-auto font-sans">
         {/* Drag Handle */}
         <div className="handle bg-gray-100 p-2 cursor-move rounded-t-lg flex justify-between items-center">
           <h2 className="text-2xl font-bold">Compose Email</h2>
@@ -562,4 +562,5 @@ const ComposeEmail = ({ onClose, saveDraft, draft }) => {
 };
 
 export default ComposeEmail;
-      
+
+

@@ -1,76 +1,113 @@
 [
     {
-        "emailId": "Parth Vijay",
-        "subject": "Welcome to Our Service",
-        "body": "Thank you for joining. We're excited to have you here!"
+      "id": "1",
+      "subject": "Welcome to AI Azent!",
+      "sender": "admin@aiazent.com",
+      "receiver": "user1@example.com",
+      "date": "2025-01-07",
+      "preview": "Get started with your AI Azent account.",
+      "body": "Hello, Welcome to AI Azent. We're glad to have you as a part of our community!"
     },
     {
-        "emailId": "John Doe",
-        "subject": "Your Invoice for October",
-        "body": "Please find attached your invoice for the month of October."
+      "id": "2",
+      "subject": "Upcoming Updates",
+      "sender": "updates@aiazent.com",
+      "receiver": "user2@example.com",
+      "date": "2025-01-06",
+      "preview": "Discover new features coming soon.",
+      "body": "We're thrilled to share exciting updates with you, including improved performance and new tools."
     },
     {
-        "emailId": "Jane Smith",
-        "subject": "Meeting Reminder",
-        "body": "Don't forget about the team meeting scheduled for tomorrow at 10 AM."
+      "id": "3",
+      "subject": "Account Security Alert",
+      "sender": "security@aiazent.com",
+      "receiver": "user3@example.com",
+      "date": "2025-01-05",
+      "preview": "Unusual activity detected.",
+      "body": "Dear user, we noticed unusual activity in your account. Please review your recent login history."
     },
     {
-        "emailId": "Parth Vijay",
-        "subject": "Welcome to Our Service",
-        "body": "Thank you for joining. We're excited to have you here!"
+      "id": "4",
+      "subject": "Exclusive Offer Just for You!",
+      "sender": "offers@aiazent.com",
+      "receiver": "user4@example.com",
+      "date": "2025-01-04",
+      "preview": "Limited-time discount inside.",
+      "body": "Enjoy an exclusive 20% discount on our premium features. Offer valid until January 15, 2025."
     },
     {
-        "emailId": "John Doe",
-        "subject": "Your Invoice for October",
-        "body": "Please find attached your invoice for the month of October."
+      "id": "5",
+      "subject": "Your Subscription Invoice",
+      "sender": "billing@aiazent.com",
+      "receiver": "user5@example.com",
+      "date": "2025-01-03",
+      "preview": "Your payment was successful.",
+      "body": "Thank you for subscribing to AI Azent Premium. Your payment of $49.99 has been processed successfully."
     },
     {
-        "emailId": "Jane Smith",
-        "subject": "Meeting Reminder",
-        "body": "Don't forget about the team meeting scheduled for tomorrow at 10 AM."
+      "id": "6",
+      "subject": "Weekly Newsletter",
+      "sender": "newsletter@aiazent.com",
+      "receiver": "user6@example.com",
+      "date": "2025-01-02",
+      "preview": "Latest updates and tips.",
+      "body": "Stay informed with our weekly newsletter featuring tips, news, and updates from AI Azent."
     },
     {
-        "emailId": "Parth Vijay",
-        "subject": "Welcome to Our Service",
-        "body": "Thank you for joining. We're excited to have you here!"
+      "id": "7",
+      "subject": "Welcome Gift for New Users",
+      "sender": "support@aiazent.com",
+      "receiver": "user7@example.com",
+      "date": "2025-01-01",
+      "preview": "Claim your free gift now!",
+      "body": "Thank you for joining AI Azent. As a token of appreciation, claim your free eBook on AI trends."
     },
     {
-        "emailId": "John Doe",
-        "subject": "Your Invoice for October",
-        "body": "Please find attached your invoice for the month of October."
+      "id": "8",
+      "subject": "Scheduled Maintenance",
+      "sender": "maintenance@aiazent.com",
+      "receiver": "user8@example.com",
+      "date": "2024-12-31",
+      "preview": "Planned downtime notice.",
+      "body": "We will perform scheduled maintenance on January 10, 2025, from 2:00 AM to 6:00 AM UTC. Services may be unavailable."
     },
     {
-        "emailId": "Jane Smith",
-        "subject": "Meeting Reminder",
-        "body": "Don't forget about the team meeting scheduled for tomorrow at 10 AM."
+      "id": "9",
+      "subject": "Reset Your Password",
+      "sender": "no-reply@aiazent.com",
+      "receiver": "user9@example.com",
+      "date": "2024-12-30",
+      "preview": "Password reset request.",
+      "body": "We received a request to reset your password. Click the link below to reset it securely."
     },
     {
-        "emailId": "Parth Vijay",
-        "subject": "Welcome to Our Service",
-        "body": "Thank you for joining. We're excited to have you here!"
+      "id": "10",
+      "subject": "AI Workshop Invitation",
+      "sender": "events@aiazent.com",
+      "receiver": "user10@example.com",
+      "date": "2024-12-29",
+      "preview": "Join our upcoming workshop.",
+      "body": "You are invited to our AI workshop on January 20, 2025. Learn from industry experts and enhance your skills."
     },
     {
-        "emailId": "John Doe",
-        "subject": "Your Invoice for October",
-        "body": "Please find attached your invoice for the month of October."
+      "id": "11",
+      "subject": "Your Feedback Matters",
+      "sender": "feedback@aiazent.com",
+      "receiver": "user11@example.com",
+      "date": "2024-12-28",
+      "preview": "Tell us about your experience.",
+      "body": "We value your feedback. Please take a moment to share your thoughts and help us improve AI Azent."
     },
     {
-        "emailId": "Jane Smith",
-        "subject": "Meeting Reminder",
-        "body": "Don't forget about the team meeting scheduled for tomorrow at 10 AM."
-    },{
-        "emailId": "Parth Vijay",
-        "subject": "Welcome to Our Service",
-        "body": "Thank you for joining. We're excited to have you here!"
-    },
-    {
-        "emailId": "John Doe",
-        "subject": "Your Invoice for October",
-        "body": "Please find attached your invoice for the month of October."
-    },
-    {
-        "emailId": "Jane Smith",
-        "subject": "Meeting Reminder",
-        "body": "Don't forget about the team meeting scheduled for tomorrow at 10 AM."
+      "id": "12",
+      "subject": "Year-End Summary",
+      "sender": "reports@aiazent.com",
+      "receiver": "user12@example.com",
+      "date": "2024-12-27",
+      "preview": "Your 2024 highlights.",
+      "body": "Here's a summary of your activity on AI Azent in 2024. Thank you for being a valuable user!"
     }
-]
+  ]
+  
+
+  

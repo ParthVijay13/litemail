@@ -1,8 +1,8 @@
 // src/app/store.js
 import { configureStore } from '@reduxjs/toolkit';
 import draftsReducer from '../slices/draftsSlice';
-import starredReducer from '../slices/starredSlice';
-
+import starredReducer from '../slices/Starredslice';
+import sidebarReducer from '../slices/sidebarSlice';
 // Function to load state from local storage
 const loadFromLocalStorage = () => {
   try {
@@ -29,6 +29,7 @@ const store = configureStore({
   reducer: {
     drafts: draftsReducer,
     starred: starredReducer,
+    sidebar: sidebarReducer,
     // Add other reducers here
   },
   preloadedState: loadFromLocalStorage(),

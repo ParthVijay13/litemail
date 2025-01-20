@@ -70,6 +70,7 @@ function Sidebar() {
             ✕
           </button> */}
         </div>
+        
 
         {/* Compose Button */}
         <button

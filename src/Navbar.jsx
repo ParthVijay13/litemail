@@ -1,32 +1,36 @@
 // src/components/Navbar.jsx
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleSidebar } from '../slices/sidebarSlice';
 
 const NavbarHeight = 64; // Height in pixels (h-16 in Tailwind)
 
-const Navbar = ({ toggleSidebar, searchTerm, setSearchTerm, isSidebarHovered }) => {
+const Navbar = ({ searchTerm, setSearchTerm, isSidebarHovered }) => {
   const navRef = useRef(null);
   const menuIconRef = useRef(null);
   const notificationRef = useRef(null);
   const profileRef = useRef(null);
   const [hoverMenu, setHoverMenu] = useState(false);
+  const dispatch = useDispatch();
+  const isSidebarOpen = useSelector((state) => state.sidebar.isOpen);
 
   useEffect(() => {
     // Fade in the navbar on page load
     gsap.fromTo(
       navRef.current,
       { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out", borderRadius:"10px"}
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out", borderRadius: "10px" }
     );
 
     // Add hover effect for the menu icon
-    gsap.to(menuIconRef.current, {
-      scale: hoverMenu ? 1.2 : 1,
-      rotate: hoverMenu ? 90 : 0,
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  }, [hoverMenu]);
+  //   gsap.to(menuIconRef.current, {
+  //     scale: hoverMenu ? 1.2 : 1,
+  //     rotate: hoverMenu ? 90 : 0,
+  //     duration: 0.5,
+  //     ease: "power2.out",
+  //   });
+  }, []);
 
   const handleNotificationHover = () => {
     gsap.to(notificationRef.current, {
@@ -67,41 +71,22 @@ const Navbar = ({ toggleSidebar, searchTerm, setSearchTerm, isSidebarHovered }) 
       ref={navRef}
       className="fixed top-0 left-0 right-0 p-4 shadow-lg flex justify-between items-center border-b bg-slate-950 z-50"
       style={{
-        left: isSidebarHovered ? '16rem' : '4rem', // Align with Sidebar width
-        width: `calc(100% - ${isSidebarHovered ? '16rem' : '4rem'})`, // Adjust width accordingly
+        left: isSidebarHovered ? '16rem' : '', // Align with Sidebar width
+        width: `calc(100%)`, // Adjust width accordingly
         transition: 'left 0.3s ease, width 0.3s ease',
       }}
     >
       {/* Menu Icon */}
-      <div
-        className="relative group inline-block"
+      <button
+        onClick={() => dispatch(toggleSidebar())} // Correctly dispatch toggleSidebar
         onMouseEnter={() => setHoverMenu(true)}
         onMouseLeave={() => setHoverMenu(false)}
+        className="text-white ml-1 focus:outline-none"
       >
-        <div
-          ref={menuIconRef}
-          className="p-2 rounded-full group-hover:bg-gray-300 transition duration-200 cursor-pointer"
-          onClick={toggleSidebar}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-gray-700"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </div>
-        <span className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-          Menu
-        </span>
-      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </button>
 
       {/* Search Bar */}
       <input
